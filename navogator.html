@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навигатор</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('static/images/im3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <h2>Введите номер аудитории и выберите корпус</h2>
+    <form id="input-form">
+        <label for="number-input">Аудитория:</label>
+        <input type="number" id="number-input" placeholder="Введите номер" required>
+        
+        <label for="letter-select">Корпус:</label>
+        <select id="letter-select" required>
+            <option value="" disabled selected>--Выберите--</option>
+            <option value="A">А</option>
+            <option value="B">Б</option>
+            <option value="C">В</option>
+        </select>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div id="output"></div> <!-- Здесь будет выводиться результат -->
+
+    <script>
+        document.getElementById('input-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Отменяем стандартное поведение формы
+            
+            // Получаем значение из поля ввода
+            const numberInput = document.getElementById('number-input').value;
+            const letterInput = document.getElementById('letter-select').value;
+            
+            // Выводим значения на страницу
+            document.getElementById('output').textContent = "Вы ввели число: " + numberInput + " и выбрали букву: " + letterInput;
+        });
+    </script>
+
+</body>
+</html>
