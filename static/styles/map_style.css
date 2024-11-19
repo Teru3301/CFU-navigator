@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: peachpuff;
+}
+
+.grid-conteiner {
+    display: grid;
+    grid-template-columns: 85% auto;
+}
+
+.block {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid black;
+}
+
+img {
+    height: 100%;
+}
