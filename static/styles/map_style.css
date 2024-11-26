@@ -19,3 +19,7 @@ body {
 img {
     height: 100%;
 }
+
+ol {
+    list-style: circle;
+}
