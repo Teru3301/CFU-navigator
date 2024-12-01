@@ -73,7 +73,10 @@
     </div>
 
     <div class="block">
-        <img src="./static/images/l0.png" alt="Карта этажа">
+        <img id="map_image" src="./static/images/l0.png" alt="Карта этажа">
+
+        <button onclick="layer_up(map_image)">Выше</button>
+        <button onclick="layer_down(map_image)">Ниже</button>
     </div>
 
     <script src="./static/scripts/map.js"></script>
