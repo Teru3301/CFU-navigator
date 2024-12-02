@@ -42,12 +42,12 @@ class Node
 
 (async () => {
     let text = await load_file();
-    for (var i = 0; i < lines.length; i++)
+    for (let i = 0; i < text.length; i++)
     {
         let line = text[i].split(/\s+/);                    //  разделение строки на отдельные значения
         line = line.filter(item => item.trim() !== "");     //  удаление пустых элементов
 
-        for (var j = 0; j < line.length; j++)
+        for (let j = 0; j < line.length; j++)
             console.log( "i = " + i + " j = " + j + " value = " + line[j]);
     }
 })();
