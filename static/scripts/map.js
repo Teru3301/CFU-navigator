@@ -1,13 +1,16 @@
 
-var current_floor = 0;
-var max_floor = 3;
-var min_floor = 0;
+let current_floor = 0;
+let max_floor = 3;
+let min_floor = 0;
 
-var map_image = document.getElementById('map_image');
-var image_list = ["./static/images/l0.png", "./static/images/l1.png", "./static/images/l2.png", "./static/images/l3.png"];
+let map_image = document.getElementById('map_image');
+let image_list = ["./static/images/l0.png", "./static/images/l1.png", "./static/images/l2.png", "./static/images/l3.png"];
+
+let graph;
 
 
-let lines;
+//          ЗАГРУЗКА ГРАФА ИЗ ФАЙЛА
+
 async function load_file() {
     try {
         const response = await fetch('./static/scripts/list.txt'); // Ожидаем завершения запроса
@@ -15,17 +18,43 @@ async function load_file() {
             throw new Error(`Ошибка: ${response.status}`); // Проверяем успешность запроса
         }
         const text = await response.text(); // Ожидаем чтения текста
-        lines = text.split('\n'); // Разделяем текст по строкам
+        return text.split('\n'); // Возвращаем разделённый текст
     } catch (error) {
         console.error('Произошла ошибка:', error); // Обрабатываем ошибки
+        return []; // Возвращаем пустой массив в случае ошибки
     }
 }
+
+class Node
+{
+    constructor(name, body, floor, x, y, connects)
+    {
+        this.name = name;           //  название ноды (номер кабинета, туалет, мед-кабинет и т.д.)
+        this.body = body;           //  корпус
+        this.foor = floor;          //  этаж текущего узла (будет использоваться для отрисовки линий маршрута)
+        this.x = x;                 //  x и y позиции текущего узла на карте
+        this.y = y;
+        this.connects = connects;   //  список нод с которыми связана текущая и расстояние до них [{нода, расстояние}]  
+        this.distance = 0;          //  дистанция до этого узла от начального
+        this.route = [this.name];   //  путь от начального узла до текущего
+    }
+};
+
 (async () => {
-    await load_file();
+    let text = await load_file();
     for (var i = 0; i < lines.length; i++)
-        console.log(lines[i]);
+    {
+        let line = text[i].split(/\s+/);                    //  разделение строки на отдельные значения
+        line = line.filter(item => item.trim() !== "");     //  удаление пустых элементов
+
+        for (var j = 0; j < line.length; j++)
+            console.log( "i = " + i + " j = " + j + " value = " + line[j]);
+    }
 })();
 
+
+
+//          ПЕРЕКЛЮЧЕНИЕ СЛОЯ КАРТЫ
 
 function layer_up()
 {
