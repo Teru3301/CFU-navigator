@@ -18,17 +18,18 @@ let graph = [];
 
 class connect
 {
-    constructor(name, distance)
+    constructor(id, distance)
     {
-        this.name = name;
+        this.id = id;
         this.distance = distance;
     }
 }
 
 class Node
 {
-    constructor(name, body, floor, x, y, connections)
+    constructor(id, name, body, floor, x, y, connections)
     {
+        this.id = id;
         this.name = name;           //  название ноды (номер кабинета, туалет, мед-кабинет и т.д.)
         this.body = body;           //  корпус
         this.floor = floor;          //  этаж текущего узла (будет использоваться для отрисовки линий маршрута)
@@ -37,6 +38,7 @@ class Node
         this.connect = connections; //  список нод с которыми связана текущая и расстояние до них [{нода, расстояние}]  
         this.distance = 0;          //  дистанция до этого узла от начального
         this.route = [this.name];   //  путь от начального узла до текущего
+        this.calculated = false;
     }
 };
 
@@ -72,12 +74,12 @@ async function load_file() {
         if (line[0] == undefined) continue;                 //  пропуск пустых строк
 
         let connect_list = [];
-        for (let j = 0; j < line[5]; j++)
+        for (let j = 0; j < line[6]; j++)
         {
-            let connection = new connect(line[5 + j * 2], line[5 + j * 2 + 1]);
+            let connection = new connect(parseInt(line[7 + j * 2]), parseInt(line[7 + j * 2 + 1]));
             connect_list.push(connection);
         }
-       let node = new Node(line[0], line[1], parseInt(line[2]), line[3], line[4], connect_list);
+       let node = new Node(parseInt(line[0]), line[1], line[2], parseInt(line[3]), line[4], line[5], connect_list);
 
         graph.push(node);
     }
@@ -149,7 +151,7 @@ function refresh_list(element_)
     for (let i = 0; i < graph.length; i++)
     {
         if (child.innerHTML.indexOf(`value="` + graph[i].floor + `"`) > -1) {
-            console.log(`skip`);
+            
         } else {
             let opt = document.createElement(`option`);
             
@@ -184,17 +186,89 @@ function refresh_list(element_)
 
 where_body.addEventListener(`change`, (event) => {
     refresh_list(where_body);
+    find_route();
 });
 where_floor.addEventListener(`change`, (event) => {
     refresh_list(where_floor);
+    find_route();
 });
 
 to_body.addEventListener(`change`, (event) => {
     refresh_list(to_body);
+    find_route();
 });
 to_floor.addEventListener(`change`, (event) => {
     refresh_list(to_floor);
+    find_route();
 });
+where_auditory.addEventListener(`change`, (event) => {
+    find_route();
+});
+to_auditory.addEventListener(`change`, (event) => {
+    find_route();
+});
+
+
+
+
+
+
+//          РАСЧЕТ МАРШРУТА
+
+
+function find_route ()
+{
+    let ind = 0;
+    for (let i = 0; i < graph.length; i++)
+    {
+//          обнуление временных переменных узлов
+        graph[i].distance = 100000000;
+        graph[i].route = [];
+        graph[i].route = [graph[i].name];
+        graph[i].calculated = false;
+//          определение текущего узла
+        if (
+            graph[i].body == where_body.options[where_body.selectedIndex].text &&
+            graph[i].floor == where_floor.options[where_floor.selectedIndex].text &&
+            graph[i].name == where_auditory.options[where_auditory.selectedIndex].text) 
+        {
+            graph[i].distance = 0;
+        }
+
+        if (
+            graph[i].body == to_body.options[to_body.selectedIndex].text &&
+            graph[i].floor == parseInt(to_floor.options[to_floor.selectedIndex].text) &&
+            graph[i].name == to_auditory.options[to_auditory.selectedIndex].text )
+        {
+            ind = i;
+        }
+    }
+
+//          сам расчет
+    let min_node;
+    while (graph[ind].calculated == false)
+    {
+//          поиск минимального значения расстояния
+        let min_dist = 100000000;
+        for (let i = 0; i < graph.length; i++)
+            if (graph[i].calculated == false && graph[i].distance < min_dist)
+                min_node = i;
+
+//          обновление значений расстояния до узла
+        for (let i = 0; i < graph[min_node].connect.length; i++)
+        {
+            if (graph[graph[min_node].connect[i].id].distance > graph[min_node].distance + graph[min_node].connect[i].distance)
+            {
+                graph[graph[min_node].connect[i].id].distance = graph[min_node].distance + graph[min_node].connect[i].distance;
+                graph[graph[min_node].connect[i].id].route = [...graph[min_node].route];
+                graph[graph[min_node].connect[i].id].route.push(graph[graph[min_node].connect[i].id].name);
+            }
+        }
+        graph[min_node].calculated = true;
+    }
+
+    console.log(graph[ind].route);
+}
 
 
 
