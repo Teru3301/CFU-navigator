@@ -320,12 +320,46 @@ function paint_map ()
 
 //          отрисовка по точкам
 
-    ctx.moveTo(graph[graph[node_to].route[0]].x, graph[graph[node_to].route[0]].y);
+    let pre_x = graph[graph[node_to].route[0]].x; 
+    let pre_y = graph[graph[node_to].route[0]].y;
+
+    
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 2;
+    ctx.arc(pre_x, pre_y, 5, 0, 2 * Math.PI, false);
+    if (graph[graph[node_to].route[0]].floor == current_floor)
+        ctx.fill();
+    else
+        ctx.setLineDash([3, 3]);
+    ctx.stroke();
+    ctx.closePath();
+
     for (let i = 1; i < graph[node_to].route.length; i++)
     {
+        ctx.beginPath();
+        if (graph[graph[node_to].route[i]].floor == current_floor)
+            ctx.setLineDash([]);
+        else
+            ctx.setLineDash([3, 3]);
+        ctx.lineJoin = "round";
         ctx.strokeStyle = "red";
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 2;
+        ctx.moveTo(pre_x, pre_y);
         ctx.lineTo(graph[graph[node_to].route[i]].x, graph[graph[node_to].route[i]].y);
         ctx.stroke();
+        ctx.closePath();
+        pre_x = graph[graph[node_to].route[i]].x;
+        pre_y = graph[graph[node_to].route[i]].y;
     }
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 2;
+    ctx.arc(pre_x, pre_y, 5, 0, 2 * Math.PI, false);
+    if (graph[graph[node_to].route[graph[node_to].route.length - 1]].floor == current_floor) ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
 }
