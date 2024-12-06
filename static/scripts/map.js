@@ -17,6 +17,7 @@ let map_width = 700;
 let map_height = 500;
 
 let graph = [];
+let node_to = 0;
 
 class connect
 {
@@ -34,12 +35,12 @@ class Node
         this.id = id;
         this.name = name;           //  название ноды (номер кабинета, туалет, мед-кабинет и т.д.)
         this.body = body;           //  корпус
-        this.floor = floor;          //  этаж текущего узла (будет использоваться для отрисовки линий маршрута)
+        this.floor = floor;         //  этаж текущего узла (будет использоваться для отрисовки линий маршрута)
         this.x = x;                 //  x и y позиции текущего узла на карте
         this.y = y;                     
         this.connect = connections; //  список нод с которыми связана текущая и расстояние до них [{нода, расстояние}]  
         this.distance = 0;          //  дистанция до этого узла от начального
-        this.route = [this.name];   //  путь от начального узла до текущего
+        this.route = [this.id];     //  путь от начального узла до текущего
         this.calculated = false;
     }
 };
@@ -116,7 +117,7 @@ async function load_file() {
 
     refresh_list(where_body);
     refresh_list(to_body);
-
+    paint_map();
 })();
 
 
@@ -219,13 +220,13 @@ to_auditory.addEventListener(`change`, (event) => {
 
 function find_route ()
 {
-    let ind = 0;
+    node_to = 0;
     for (let i = 0; i < graph.length; i++)
     {
 //          обнуление временных переменных узлов
         graph[i].distance = 100000000;
         graph[i].route = [];
-        graph[i].route = [graph[i].name];
+        graph[i].route = [graph[i].id];
         graph[i].calculated = false;
 //          определение текущего узла
         if (
@@ -241,13 +242,13 @@ function find_route ()
             graph[i].floor == parseInt(to_floor.options[to_floor.selectedIndex].text) &&
             graph[i].name == to_auditory.options[to_auditory.selectedIndex].text )
         {
-            ind = i;
+            node_to = i;
         }
     }
 
 //          сам расчет
     let min_node;
-    while (graph[ind].calculated == false)
+    while (graph[node_to].calculated == false)
     {
 //          поиск минимального значения расстояния
         let min_dist = 100000000;
@@ -262,13 +263,14 @@ function find_route ()
             {
                 graph[graph[min_node].connect[i].id].distance = graph[min_node].distance + graph[min_node].connect[i].distance;
                 graph[graph[min_node].connect[i].id].route = [...graph[min_node].route];
-                graph[graph[min_node].connect[i].id].route.push(graph[graph[min_node].connect[i].id].name);
+                graph[graph[min_node].connect[i].id].route.push(graph[graph[min_node].connect[i].id].id);
             }
         }
         graph[min_node].calculated = true;
     }
 
-    console.log(graph[ind].route);
+    console.log(graph[node_to].route);
+    paint_map();
 }
 
 
@@ -317,11 +319,13 @@ function paint_map ()
     canvas.height = map_height;
 
 //          отрисовка по точкам
-    ctx.strokeStyle = "red";
-    ctx.lineWidth = 3;
-    ctx.moveTo(0, 0);
-    ctx.lineTo(200, 200);
-    ctx.stroke();
-}
 
-paint_map();
+    ctx.moveTo(graph[graph[node_to].route[0]].x, graph[graph[node_to].route[0]].y);
+    for (let i = 1; i < graph[node_to].route.length; i++)
+    {
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 3;
+        ctx.lineTo(graph[graph[node_to].route[i]].x, graph[graph[node_to].route[i]].y);
+        ctx.stroke();
+    }
+}
