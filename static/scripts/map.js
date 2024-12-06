@@ -13,6 +13,8 @@ let min_floor = 0;
 
 let map_image = document.getElementById('map_image');
 let image_list = ["./static/images/l0.png", "./static/images/l1.png", "./static/images/l2.png", "./static/images/l3.png"];
+let map_width = 700;
+let map_height = 500;
 
 let graph = [];
 
@@ -192,7 +194,6 @@ where_floor.addEventListener(`change`, (event) => {
     refresh_list(where_floor);
     find_route();
 });
-
 to_body.addEventListener(`change`, (event) => {
     refresh_list(to_body);
     find_route();
@@ -284,7 +285,7 @@ function layer_up()
     if (current_floor < max_floor)
     {
         current_floor++;
-        map_image.src = image_list[current_floor];
+        paint_map();
     }
 }
 
@@ -293,7 +294,34 @@ function layer_down ()
     if (current_floor > min_floor)
     {
         current_floor--;
-        map_image.src = image_list[current_floor];
+        paint_map();
     }
 }
 
+
+
+
+
+
+//          ОТРИСОВКА МАРШРУТА
+
+
+
+function paint_map ()
+{
+//          определение канваса
+    let canvas = document.getElementById('map_canvas');
+    canvas.style[`background-image`] = "url(" + image_list[current_floor];
+    let ctx = canvas.getContext(`2d`);
+    canvas.width = map_width;
+    canvas.height = map_height;
+
+//          отрисовка по точкам
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+}
+
+paint_map();

@@ -23,3 +23,8 @@ img {
 ol {
     list-style: circle;
 }
+
+#map_canvas {
+    border: 3px solid black;
+    background-image: url(../images/l0.png);
+}
