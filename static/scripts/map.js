@@ -8,13 +8,13 @@ let to_floor = document.getElementById(`to_floor`);
 let to_auditory = document.getElementById(`to_auditory`);
 
 let current_floor = 0;
-let max_floor = 3;
+let max_floor = 5;
 let min_floor = 0;
 
 let map_image = document.getElementById('map_image');
-let image_list = ["./static/images/l0.png", "./static/images/l1.png", "./static/images/l2.png", "./static/images/l3.png"];
-let map_width = 700;
-let map_height = 500;
+let image_list = ["./static/images/l0.png", "./static/images/l1.png", "./static/images/l2.png", "./static/images/l3.png", "./static/images/l4.png", "./static/images/l5.png"];
+let map_width = 3548;
+let map_height = 3100;
 
 let graph = [];
 let node_to = 0;
