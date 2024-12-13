@@ -1,51 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КФУ</title>
-    <link rel="stylesheet" href="./static/styles/map_style.css">
-    <script scr="static/styles/strange.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--metatextblock-->
+  <title>Главная</title>
+  <meta property="og:url" content="http://project11482657.tilda.ws" />
+  <meta property="og:title" content="Главная" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://static.tildacdn.info/tild3566-3234-4837-b163-633936656130/-/resize/504x/MIC01161-1-scaled.jpg" />
+  <link rel="canonical" href="index.html">
+  <!--/metatextblock-->
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://ws.tildacdn.com">
+  <link rel="dns-prefetch" href="https://static.tildacdn.info">
+  <link rel="shortcut icon" href="https://static.tildacdn.info/img/tildafavicon.ico" type="image/x-icon" />
+  <!-- Assets -->
+  <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-grid-3.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
+  <link rel="stylesheet" href="https://static.tildacdn.info/ws/project11482657/tilda-blocks-page59501333.min.css?t=1733520024" type="text/css" media="all" onerror="this.loaderr='y';" />
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-cover-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-popup-1.1.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+  <noscript>
+    <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-popup-1.1.min.css" type="text/css" media="all" />
+  </noscript>
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-cards-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-slds-1.4.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+  <noscript>
+    <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-slds-1.4.min.css" type="text/css" media="all" />
+  </noscript>
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-zoom-2.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+  <noscript>
+    <link rel="stylesheet" href="https://static.tildacdn.info/css/tilda-zoom-2.0.min.css" type="text/css" media="all" />
+  </noscript>
+  <link rel="stylesheet" href="https://static.tildacdn.info/css/fonts-tildasans.css" type="text/css" media="all" onerror="this.loaderr='y';" />
+  <script nomodule src="https://static.tildacdn.info/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function t_onReady(func) {
+      if (document.readyState != 'loading') {
+        func();
+      } else {
+        document.addEventListener('DOMContentLoaded', func);
+      }
+    }
+
+    function t_onFuncLoad(funcName, okFunc, time) {
+      if (typeof window[funcName] === 'function') {
+        okFunc();
+      } else {
+        setTimeout(function() {
+          t_onFuncLoad(funcName, okFunc, time);
+        }, (time || 100));
+      }
+    }
+  </script>
+  <script src="https://static.tildacdn.info/js/tilda-scripts-3.0.min.js" charset="utf-8" defer onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/ws/project11482657/tilda-blocks-page59501333.min.js?t=1733520024" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-lazyload-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-cover-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-paint-icons.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-cards-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-slds-1.4.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/hammer.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-zoom-2.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.info/js/tilda-events-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+  </script>
+  <script type="text/javascript">
+    (function() {
+      if ((/bot|google|yandex|baidu|bing|msn|duckduckbot|teoma|slurp|crawler|spider|robot|crawling|facebook/i.test(navigator.userAgent)) === false && typeof(sessionStorage) != 'undefined' && sessionStorage.getItem('visited') !== 'y' && document.visibilityState) {
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerHTML = '@media screen and (min-width: 980px) {.t-records {opacity: 0;}.t-records_animated {-webkit-transition: opacity ease-in-out .2s;-moz-transition: opacity ease-in-out .2s;-o-transition: opacity ease-in-out .2s;transition: opacity ease-in-out .2s;}.t-records.t-records_visible {opacity: 1;}}';
+        document.getElementsByTagName('head')[0].appendChild(style);
+
+        function t_setvisRecs() {
+          var alr = document.querySelectorAll('.t-records');
+          Array.prototype.forEach.call(alr, function(el) {
+            el.classList.add("t-records_animated");
+          });
+          setTimeout(function() {
+            Array.prototype.forEach.call(alr, function(el) {
+              el.classList.add("t-records_visible");
+            });
+            sessionStorage.setItem("visited", "y");
+          }, 400);
+        }
+        document.addEventListener('DOMContentLoaded', t_setvisRecs);
+      }
+    })();
+  </script>
 </head>
 
-<body>
-    <div class="grid-conteiner">
-
-        <div class="block">
-            <h1>Сайт для студентов Физико-Технического Института</h1>
-        
-            <h2><p>Наш сайт является помощником для студентов. С его помощью можно найти дорогу к нужной аудитории, получить расписание занятий, узнать о всех последних новостях, а так же найти ссылки на полезные ресурсы.</p></h2>
+<body class="t-body" style="margin:0;">
+  <!--allrecords-->
+  <div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="11482657" data-tilda-page-id="59501333" data-tilda-formskey="4135bec368ba31a97a113ace11482657" data-tilda-cookie="no" data-tilda-lazy="yes" data-tilda-root-zone="one">
+    <div id="rec836710615" class="r t-rec" style=" " data-animationappear="off" data-record-type="192">
+      <!-- cover -->
+      <div class="t-cover" id="recorddiv836710615" bgimgfield="img" style="height:100vh;background-image:url('https://static.tildacdn.info/tild3566-3234-4837-b163-633936656130/-/resize/20x/MIC01161-1-scaled.jpg');">
+        <div class="t-cover__carrier" id="coverCarry836710615" data-content-cover-id="836710615" data-content-cover-bg="https://static.tildacdn.info/tild3566-3234-4837-b163-633936656130/MIC01161-1-scaled.jpg" data-display-changed="true" data-content-cover-height="100vh" data-content-cover-parallax="fixed" data-content-use-image-for-mobile-cover="" style="height:100vh; " itemscope itemtype="http://schema.org/ImageObject">
+          <meta itemprop="image" content="https://static.tildacdn.info/tild3566-3234-4837-b163-633936656130/MIC01161-1-scaled.jpg">
         </div>
-            
-        
-        <div>
-            <div class="block to-enother-page">
-                <a href="plan.html"> Расписание </a>
+        <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.30));background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.30));background-image: -o-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.30));background-image: -ms-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.30));background-image: linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.30));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#b2000000', endColorstr='#b2000000');"></div>
+        <div class="t174">
+          <div class="t-container">
+            <div class="t-cover__wrapper t-valign_middle" style="height:100vh;">
+              <div class="t174__textwrapper t-align_center t-margin_auto" style="max-width: 620px; " data-hook-content="covercontent">
+                <div class="t174__trow">
+                  <div class="t174__uptitle t-uptitle t-uptitle_md" field="subtitle">Крымский Федеральный Университет</div>
+                </div>
+                <div class="t174__trow">
+                  <div class="t174__title t-title t-title_lg" field="title">Физико-Технический Институт</div>
+                </div>
+                <div class="t174__trow">
+                  <div class="t174__descr t-descr t-descr_lg t-opacity_50" field="descr">Наш сайт является помощником для студентов. С его помощью можно найти дорогу к нужной аудитории, получить расписание занятий, узнать о всех последних новостях, а так же найти ссылки на полезные ресурсы.</div>
+                </div>
+              </div>
             </div>
-            <div class="block to-enother-page">
-                <a href="navogator.html"> Навигатор</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rec836721866" class="r t-rec t-rec_pt_30 t-rec_pb_30" style="padding-top:30px;padding-bottom:30px;background-color:#ffffff; " data-record-type="1022" data-bg-color="#ffffff">
+      <!-- t1022 -->
+      <div class="t1022 t-container">
+        <div class="t-col t-col_10 t-prefix_1">
+          <div class="t1022__wrapper">
+            <div class="t-divider t1022__line"></div>
+            <div class="t1022__icon" data-original="https://static.tildacdn.info/tild3435-3465-4165-b231-623435653462/heart.svg" data-color="#000"></div>
+            <div class="t-divider t1022__line"></div>
+          </div>
+        </div>
+      </div>
+      <style></style>
+      <script>
+        t_onReady(function() {
+          t_onFuncLoad('t__paintIcons', function() {
+            t__paintIcons('836721866', '.t1022__icon');
+          });
+        });
+      </script>
+    </div>
+    <div id="rec836705713" class="r t-rec t-rec_pt_120 t-rec_pb_120" style="padding-top:120px;padding-bottom:120px;background-color:#efefef; " data-animationappear="off" data-record-type="902" data-bg-color="#efefef">
+      <!-- t902 -->
+      <div class="t902">
+        <div class="t-section__container t-container t-container_flex">
+          <div class="t-col t-col_12 ">
+            <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
+              Выберите куда хотите попасть
+            </div>
+            <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto" field="bdescr">
+              Ты можешь перейти на любую из этих станиц и найти там необходимую информацию
+            </div>
+          </div>
+        </div>
+        <style>
+          .t-section__descr {
+            max-width: 560px;
+          }
+          
+          #rec836705713 .t-section__title {
+            margin-bottom: 40px;
+          }
+          
+          #rec836705713 .t-section__descr {
+            margin-bottom: 90px;
+          }
+          
+          @media screen and (max-width:960px) {
+            #rec836705713 .t-section__title {
+              margin-bottom: 20px;
+            }
+            #rec836705713 .t-section__descr {
+              margin-bottom: 45px;
+            }
+          }
+        </style>
+        <div class="t902__container t-card__container t-container">
+          <div class="t-card__col t-col t-col_6 t902__col_first">
+            <div class="t902__inner-col" style="background-color:#ffffff;">
+              <div class="t902__wrap">
+                <div class="t902__wrap_left">
+                  <div class="t902__bgwrapper t902__bgwrapper_height" style="" itemscope itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.info/tild3761-6230-4335-b465-366631306338/images.jpg">
+                    <div class="t902__bgimg t-bgimg" data-original="https://static.tildacdn.info/tild3761-6230-4335-b465-366631306338/images.jpg" bgimgfield="li_img__4578366954490" style="background-image:url('https://static.tildacdn.info/tild3761-6230-4335-b465-366631306338/-/resizeb/20x/images.jpg');"></div>
+                  </div>
+                </div>
+                <div class="t902__wrap_right">
+                  <div class="t902__content">
+                    <div class="t-card__title t-name t-name_md t902__bottommargin" field="li_title__4578366954490"> <a href="rasp.html" class="t-card__link" id="cardtitle1_836705713" aria-labelledby="cardtitle1_836705713 cardbtn1_836705713">
+Расписание
+</a> </div>
+                    <div class="t-card__descr t-descr t-descr_xs" field="li_descr__4578366954490">
+                      Посмотри расписание занятий
+                    </div>
+                    <div class="t902__btn-container t902__btn-container_topmargin">
+                      <div class="t-card__btn-wrapper">
+                        <div class="t-card__btn t-btn t-btn_xs" id="cardbtn1_836705713" style="color:#ffffff;background-color:#000000;border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;" data-field="li_buttontitle__4578366954490" aria-hidden="true" data-buttonfieldset="li_button" data-lid="4578366954490">
+                          Перейти
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="t-card__col t-col t-col_6 ">
+            <div class="t902__inner-col" style="background-color:#ffffff;">
+              <div class="t902__wrap">
+                <div class="t902__wrap_left">
+                  <div class="t902__bgwrapper t902__bgwrapper_height" style="" itemscope itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.info/tild3266-3034-4431-a532-356166613732/681768.png">
+                    <div class="t902__bgimg t-bgimg" data-original="https://static.tildacdn.info/tild3266-3034-4431-a532-356166613732/681768.png" bgimgfield="li_img__4578366954491" style="background-image:url('https://static.tildacdn.info/tild3266-3034-4431-a532-356166613732/-/resizeb/20x/681768.png');"></div>
+                  </div>
+                </div>
+                <div class="t902__wrap_right">
+                  <div class="t902__content">
+                    <div class="t-card__title t-name t-name_md t902__bottommargin" field="li_title__4578366954491"> <a href="navi.html" class="t-card__link" id="cardtitle2_836705713" aria-labelledby="cardtitle2_836705713 cardbtn2_836705713">
+Навигатор
+</a> </div>
+                    <div class="t-card__descr t-descr t-descr_xs" field="li_descr__4578366954491">
+                      Посмотри как попасть в необходимую аудиторию
+                    </div>
+                    <div class="t902__btn-container t902__btn-container_topmargin">
+                      <div class="t-card__btn-wrapper">
+                        <div class="t-card__btn t-btn t-btn_xs" id="cardbtn2_836705713" style="color:#ffffff;background-color:#000000;border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;" data-field="li_buttontitle__4578366954491" aria-hidden="true" data-buttonfieldset="li_button" data-lid="4578366954491">
+                          Перейти
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="t902__separator" style=""></div>
+        </div>
+      </div>
+      <script>
+        t_onReady(function() {
+          t_onFuncLoad('t902_init', function() {
+            t902_init('836705713');
+          });
+        });
+      </script>
+    </div>
+    <div id="rec836698772" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px;background-color:#ffffff; " data-animationappear="off" data-record-type="680" data-bg-color="#ffffff">
+      <!-- t680 -->
+      <!-- @classes: t-descr t-descr_xxs -->
+      <div class="t680">
+        <div class="t680__container t-container_100 ">
+          <div class="t680__row t680__row_indent-20px t-row">
+            <div class="t680__tile t680__tile_left t680__tile_big-img t680__top" itemscope itemtype="http://schema.org/ImageObject">
+              <meta itemprop="image" content="https://static.tildacdn.info/tild3065-3337-4063-a363-396234646235/tild3339-3531-4463-b.jpg">
+              <div class="t680__bgimg t680__bgimg_lg t-bgimg" data-original="https://static.tildacdn.info/tild3065-3337-4063-a363-396234646235/tild3339-3531-4463-b.jpg" bgimgfield="gi_img__0" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.info/tild3065-3337-4063-a363-396234646235/tild3339-3531-4463-b.jpg" style="background: url('https://static.tildacdn.info/tild3065-3337-4063-a363-396234646235/-/resizeb/20x/tild3339-3531-4463-b.jpg') center center no-repeat;background-size: cover;"></div>
+            </div>
+            <div class="t680__tile t680__tile_right ">
+              <div class="t680__bgimg_wrapper t680__bgimg_wrapper_left" itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop="image" content="https://static.tildacdn.info/tild3765-3938-4638-a233-373564616134/photo_2024-11-05_10-.jpg">
+                <div class="t680__bgimg t680__bgimg_sm t-bgimg" data-original="https://static.tildacdn.info/tild3765-3938-4638-a233-373564616134/photo_2024-11-05_10-.jpg" bgimgfield="gi_img__1" data-zoomable="yes" data-zoom-target="1" data-img-zoom-url="https://static.tildacdn.info/tild3765-3938-4638-a233-373564616134/photo_2024-11-05_10-.jpg" style="background: url('https://static.tildacdn.info/tild3765-3938-4638-a233-373564616134/-/resizeb/20x/photo_2024-11-05_10-.jpg') center center no-repeat;background-size: cover;"></div>
+              </div>
+              <div class="t680__bgimg_wrapper t680__bgimg_wrapper_right" itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop="image" content="https://static.tildacdn.info/tild3839-3566-4136-b662-353364363139/photo_2024-09-27_11-.jpg">
+                <div class="t680__bgimg t680__bgimg_sm t-bgimg" data-original="https://static.tildacdn.info/tild3839-3566-4136-b662-353364363139/photo_2024-09-27_11-.jpg" bgimgfield="gi_img__2" data-zoomable="yes" data-zoom-target="2" data-img-zoom-url="https://static.tildacdn.info/tild3839-3566-4136-b662-353364363139/photo_2024-09-27_11-.jpg" style="background: url('https://static.tildacdn.info/tild3839-3566-4136-b662-353364363139/-/resizeb/20x/photo_2024-09-27_11-.jpg') center center no-repeat;background-size: cover;"></div>
+              </div>
+              <div class="t680__gap"></div>
+              <div class="t680__bgimg_wrapper t680__bgimg_wrapper_left " itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop="image" content="https://static.tildacdn.info/tild6439-6661-4536-a338-643837373563/photo_2024-10-31_13-.jpg">
+                <div class="t680__bgimg t680__bgimg_sm t-bgimg" data-original="https://static.tildacdn.info/tild6439-6661-4536-a338-643837373563/photo_2024-10-31_13-.jpg" bgimgfield="gi_img__3" data-zoomable="yes" data-zoom-target="3" data-img-zoom-url="https://static.tildacdn.info/tild6439-6661-4536-a338-643837373563/photo_2024-10-31_13-.jpg" style="background: url('https://static.tildacdn.info/tild6439-6661-4536-a338-643837373563/-/resizeb/20x/photo_2024-10-31_13-.jpg') center center no-repeat;background-size: cover;"></div>
+              </div>
+              <div class="t680__bgimg_wrapper t680__bgimg_wrapper_right" itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop="image" content="https://static.tildacdn.info/tild6263-3062-4864-b262-616139373136/photo_2024-08-19_09-.jpg">
+                <div class="t680__bgimg t680__bgimg_sm t-bgimg" data-original="https://static.tildacdn.info/tild6263-3062-4864-b262-616139373136/photo_2024-08-19_09-.jpg" bgimgfield="gi_img__4" data-zoomable="yes" data-zoom-target="4" data-img-zoom-url="https://static.tildacdn.info/tild6263-3062-4864-b262-616139373136/photo_2024-08-19_09-.jpg" style="background: url('https://static.tildacdn.info/tild6263-3062-4864-b262-616139373136/-/resizeb/20x/photo_2024-08-19_09-.jpg') center center no-repeat;background-size: cover;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--[if (IE 8)|(IE 9)]> <style>.t680__bgimg_lg{padding-bottom:100%;}</style> <![endif]-->
+    </div>
+    <div id="rec836733606" class="r t-rec t-rec_pt_30 t-rec_pb_30" style="padding-top:30px;padding-bottom:30px;background-color:#efefef; " data-record-type="1022" data-bg-color="#efefef">
+      <!-- t1022 -->
+      <div class="t1022 t-container">
+        <div class="t-col t-col_10 t-prefix_1">
+          <div class="t1022__wrapper">
+            <div class="t-divider t1022__line"></div>
+            <div class="t1022__icon" data-original="https://static.tildacdn.info/tild3435-3465-4165-b231-623435653462/heart.svg" data-color="#000"></div>
+            <div class="t-divider t1022__line"></div>
+          </div>
+        </div>
+      </div>
+      <style></style>
+      <script>
+        t_onReady(function() {
+          t_onFuncLoad('t__paintIcons', function() {
+            t__paintIcons('836733606', '.t1022__icon');
+          });
+        });
+      </script>
+    </div>
+    <div id="rec836707940" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#ffffff; " data-record-type="22" data-bg-color="#ffffff">
+      <!-- T005A -->
+      <div class="t005A">
+        <div class="t-container">
+          <div class="t-row">
+            <div class="t-col t-col_6 ">
+              <div class="t005A__title t-title t-title_sm" field="title">История университета</div>
+              <div class="t005A__descr t-descr t-descr_xs t-opacity_50" field="descr">История Крымского Федерального Университета</div>
+              <div class="t005A__text t-text t-text_md" field="text">В мае 1918 г. на физико-математическом и медицинском факультетах, размещенных в Ялте, началось чтение лекций. С осени 1918 г. все пять факультетов университета – историко-филологический, физико-математический, юридический, медицинский и агрономический – сосредоточились в Cимферополе. Они были размещены в бывших зданиях военного госпиталя (ул. Студенческая, 10 и 12), женского епархиального училища (бульвар Ленина, 5/7), духовной семинарии (пер. Героев Аджимушкая, 9), в ряде частных домов.
+                <br />
+                <br />
+                <br />У истоков создания Таврического университета стояли ученые Киевского университета, которые и избрали его первый Совет во главе с ректором – видным деятелем медицинской науки профессором Р. И. Гельвигом. 13 октября 1920 г., после кончины Гельвига, ректором был избран академик В. И. Вернадский.
+                <br />
+                <br />
+                <br />Крымский федеральный университет им. В. И. Вернадского расположен в городе Симферополе, является крупнейшим высшим учебным заведением Республики Крым, входит в десятку федеральных университетов Российской Федерации.</div>
+            </div>
+            <div class="t-col t-col_6 ">
+              <div class="t005A__text t-text t-text_md" field="text2">Свою историю Крымский федеральный университет ведет от создания в Крыму Таврического университета – первого высшего учебного заведения на полуострове. Таврическое губернское земство ходатайствовало об открытии в Cимферополе университета еще в 1916 г., для этого был выделен миллион рублей, однако царское правительство не утвердило законопроект.
+                <br />Крымский федеральный университет имени В.И. Вернадского (КФУ) является преемником первого высшего учебного заведения в Крыму – Таврического университета, созданного в 1918 году по инициативе Соломона Самойловича Крыма.
+                <br />Во время правления белогвардейцев и иностранных интервентов университет находился в исключительно трудных условиях. Его преподаватели, чтобы выжить, брались за любую работу: пилили дрова, шили сапоги и т. д. Свыше 20 профессоров и преподавателей были лишены крова, многие студенты систематически голодали.
+                <br />
+                <br />После окончательного установления Советской власти проведена реорганизация университета. 1 февраля 1921 г. он был переименован в Крымский университет имени М. В. Фрунзе, а в 20 – начале 30-х годов на его базе созданы три высших учебных заведения – педагогический, медицинский и сельскохозяйственный институты.
+                <br />В настоящее время в вузе обучается более 35.000 студентов из разных регионов Российской Федерации, Украины, СНГ и зарубежных стран.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rec836727468" class="r t-rec t-rec_pt_30 t-rec_pb_30" style="padding-top:30px;padding-bottom:30px; background-color: #efefef; " data-record-type="1022">
+        <!-- t1022 -->
+        <div class="t1022 t-container">
+          <div class="t-col t-col_10 t-prefix_1">
+            <div class="t1022__wrapper">
+              <div class="t-divider t1022__line"></div>
+              <div class="t1022__icon" data-original="https://static.tildacdn.info/tild3435-3465-4165-b231-623435653462/heart.svg" data-color="#000"></div>
+              <div class="t-divider t1022__line"></div>
+            </div>
+          </div>
+        </div>
+        <style></style>
+        <script>
+          t_onReady(function() {
+            t_onFuncLoad('t__paintIcons', function() {
+              t__paintIcons('836727468', '.t1022__icon');
+            });
+          });
+        </script>
+      </div>
+
+      <div id="rec836742110" class="r t-rec" style="background-color:#111111; " data-animationappear="off" data-record-type="345" data-bg-color="#111111">
+        <!-- T345 -->
+        <div class="t345" id="footer_836742110">
+            <div class="t345-wrapper" style="border-top: 1px solid; border-top-color: #292929;">
+                <div class="t345-container t-container">
+                    <div class="t345-col t-col t-col_12">
+                        <div class="t345-content" style="height:120px; display: flex; justify-content: space-between; align-items: center;">
+                            <div class="t345-text__wrapper">
+                                <div class="t345-text t-descr t-descr_xxs"><span style="font-weight: 600;"></span></div>
+                            </div>
+                            <div class="t345-socials" style="display: flex; align-items: center;">
+                                <ul role="list" class="t-sociallinks__wrapper" aria-label="Соц. сети" style="display: flex; align-items: center; padding: 0; margin: 0;">
+                                    <li class="t-sociallinks__item t-sociallinks__item_github" style="margin-right: 10px;">
+                                        <a target="_blank" rel="nofollow" aria-label="GitHub" title="GitHub" style="width: 30px; height: 30px;">
+                                            <svg class="t-sociallinks__svg" role="presentation" width=30px height=30px viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M52.078 99.958C78.728 98.868 100 76.918 100 50c0-27.614-22.386-50-50-50S0 22.386 0 50s22.386 50 50 50l.368-.001.335.001c.432 0 .894-.015 1.375-.042Zm0 0c3.828-.216 8.81-1.186 8.81-1.186l-.053-2.99s.05-5.839.05-11.388c0-3.873-1.327-6.407-2.818-7.688 9.248-1.027 18.954-4.537 18.954-20.484 0-4.532-1.607-8.238-4.268-11.14.427-1.05 1.852-5.271-.413-10.986 0 0-3.479-1.116-11.405 4.256-3.316-.92-6.867-1.381-10.392-1.397-3.53.016-7.082.476-10.393 1.397-7.93-5.372-11.416-4.256-11.416-4.256-2.258 5.716-.833 9.937-.407 10.986-2.655 2.902-4.272 6.607-4.272 11.14 0 15.907 9.69 19.469 18.909 20.517-1.186 1.038-2.258 2.867-2.635 5.55-2.366 1.062-8.378 2.894-12.081-3.45 0 0-2.193-3.984-6.358-4.278 0 0-4.055-.052-.286 2.523 0 0 2.722 1.277 4.609 6.073 0 0 2.436 8.073 13.984 5.565.01 1.884.026 3.515.038 4.77.01 1.053.018 1.84.018 2.29l.01 2.889c3.232.84 6.617 1.3 10.105 1.328a50.99 50.99 0 0 0 1.71-.041Z" fill="#ffffff" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="t456__list_item" style="padding:0;"> 
+                                        <a class="t-menu__link-item" href="https://github.com/daria-rumyantseva" data-menu-submenu-hook="" data-menu-item-number="1" style="color: white; margin-right: 10px;">Дарья</a> 
+                                    </li>
+                                    <li class="t456__list_item" style="padding:0;"> 
+                                        <a class="t-menu__link-item" href="https://github.com/Teru3301" data-menu-submenu-hook="" data-menu-item-number="2" style="color: white;">Тимур</a> 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+      </div>
+      
 
-    <div class="block">
-        <img src="./static/images/кфу_files/1100872795_0_127_2416_1486_1920x0_80_0_0_37f2deca5d38a5c18f1001ea1192dea4.jpg" width="100%" height="100%" alt="Карта этажа">
-    </div>
-    
-    <div class="block">
-        <p>
-            Крымский федеральный университет им. В. И. Вернадского расположен в городе Симферополе, является крупнейшим высшим учебным заведением Республики Крым, входит в десятку федеральных университетов Российской Федерации.
-        </p>
-        <p>
-            Свою историю Крымский федеральный университет ведет от создания в Крыму Таврического университета – первого высшего учебного заведения на полуострове. Таврическое губернское земство ходатайствовало об открытии в Cимферополе университета еще в 1916 г., для этого был выделен миллион рублей, однако царское правительство не утвердило законопроект.
-        </p>
-        <p>
-            Крымский федеральный университет имени В.И. Вернадского (КФУ) является преемником первого высшего учебного заведения в Крыму – Таврического университета, созданного в 1918 году по инициативе Соломона Самойловича Крыма.
-        </p>
-    </div>  
 
-    
+    </div>
+  
 </body>
 
 </html>

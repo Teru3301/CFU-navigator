@@ -13,8 +13,8 @@ let min_floor = 0;
 
 let map_image = document.getElementById('map_image');
 let image_list = ["./static/images/l0.png", "./static/images/l1.png", "./static/images/l2.png", "./static/images/l3.png", "./static/images/l4.png", "./static/images/l5.png"];
-let map_width = 3548;
-let map_height = 3100;
+let map_width = (window.innerHeight * 1.15) * 0.9;
+let map_height = (window.innerHeight) * 0.9;
 
 let graph = [];
 let node_to = 0;
@@ -79,7 +79,8 @@ async function load_file() {
         let connect_list = [];
         for (let j = 0; j < line[6]; j++)
         {
-            let connection = new connect(parseInt(line[7 + j * 2]), parseInt(line[7 + j * 2 + 1]));
+            let connection = new connect(parseInt(line[7 + j]), 1);
+            //let connection = new connect(parseInt(line[7 + j * 2]), parseInt(line[7 + j * 2 + 1]));   //  тут считывалось расстояние, но я заебался его писать в файле, по этому оно теперь всегда равно 1
             connect_list.push(connection);
         }
        let node = new Node(parseInt(line[0]), line[1], line[2], parseInt(line[3]), line[4], line[5], connect_list);
@@ -153,6 +154,9 @@ function refresh_list(element_)
 
     for (let i = 0; i < graph.length; i++)
     {
+        if (graph[i].name == "-")
+            continue;
+
         if (child.innerHTML.indexOf(`value="` + graph[i].floor + `"`) > -1) {
             
         } else {
@@ -311,29 +315,35 @@ function layer_down ()
 
 function paint_map ()
 {
-//          определение канваса
+    //          определение канваса
     let canvas = document.getElementById('map_canvas');
-    canvas.style[`background-image`] = "url(" + image_list[current_floor];
     let ctx = canvas.getContext(`2d`);
     canvas.width = map_width;
     canvas.height = map_height;
+    canvas.style[`background-image`] = "url(" + image_list[current_floor] + ")";
+    canvas.style['background-size'] = 'cover';
 
-//          отрисовка по точкам
+    //          масштабирование пути
 
+    ctx.scale(map_width / 3548, map_height / 3100);
+
+
+    //          отрисовка по точкам
+    
     let pre_x = graph[graph[node_to].route[0]].x; 
     let pre_y = graph[graph[node_to].route[0]].y;
-
+    
     
     ctx.beginPath();
     ctx.fillStyle = "red";
     ctx.strokeStyle = "red";
-    ctx.lineWidth = 2;
-    ctx.arc(pre_x, pre_y, 5, 0, 2 * Math.PI, false);
+    ctx.lineWidth = 10;
+    ctx.arc(pre_x, pre_y, 15, 0, 2 * Math.PI, false);
     if (graph[graph[node_to].route[0]].floor == current_floor)
         ctx.fill();
     else
-        ctx.setLineDash([3, 3]);
-    ctx.stroke();
+    ctx.setLineDash([10, 10]);
+ctx.stroke();
     ctx.closePath();
 
     for (let i = 1; i < graph[node_to].route.length; i++)
@@ -342,10 +352,10 @@ function paint_map ()
         if (graph[graph[node_to].route[i]].floor == current_floor)
             ctx.setLineDash([]);
         else
-            ctx.setLineDash([3, 3]);
+            ctx.setLineDash([10, 10]);
         ctx.lineJoin = "round";
         ctx.strokeStyle = "red";
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 10;
         ctx.moveTo(pre_x, pre_y);
         ctx.lineTo(graph[graph[node_to].route[i]].x, graph[graph[node_to].route[i]].y);
         ctx.stroke();
@@ -357,8 +367,8 @@ function paint_map ()
     ctx.beginPath();
     ctx.fillStyle = "red";
     ctx.strokeStyle = "red";
-    ctx.lineWidth = 2;
-    ctx.arc(pre_x, pre_y, 5, 0, 2 * Math.PI, false);
+    ctx.lineWidth = 10;
+    ctx.arc(pre_x, pre_y, 15, 0, 2 * Math.PI, false);
     if (graph[graph[node_to].route[graph[node_to].route.length - 1]].floor == current_floor) ctx.fill();
     ctx.stroke();
     ctx.closePath();
