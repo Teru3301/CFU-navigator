@@ -229,38 +229,44 @@
 
 <!сюда суй свой код>
 
+<div class="block">
+  <p>Откуда</p>
+  <select id="where_body"></select>
+  <select id="where_floor"></select>
+  <select id="where_auditory"></select>
+
+  <p>Куда</p>
+  <select id="to_body"></select>
+  <select id="to_floor"></select>
+  <select id="to_auditory"></select>
+
+</div>
+
+
+
+<!тимуууууур, я не ебу как украсить вложенные списки, какая то хуйня(((>
+
+
+
+
 
 
 
 <div class="block">
-    <p>Откуда</p>
-    <select id="where_body"></select>
-    <select id="where_floor"></select>
-    <select id="where_auditory"></select>
-
-    <p>Куда</p>
-    <select id="to_body"></select>
-    <select id="to_floor"></select>
-    <select id="to_auditory"></select>
+  <canvas id="map_canvas">Этот текст будет виден только если этот элемент не поддерживается браузером</canvas>
+  
+  <a class="t-btn t142__submit t-btn_md" href="javascript:void(0);" onclick="layer_up()" style="color:#000000;border:3px solid #000000;"> 
+      <span class="t142__text">Выше</span> 
+  </a>
+  
+  <a class="t-btn t142__submit t-btn_md" href="javascript:void(0);" onclick="layer_down()" style="color:#000000;border:3px solid #000000;"> 
+      <span class="t142__text">Ниже</span> 
+  </a>
 </div>
 
-<div class="block">
-    <canvas id="map_canvas"> Этот текст будет виден только если этот элемент не поддерживается браузером</canvas>
-    
-    <button onclick="layer_up()">Выше</button>
-    <button onclick="layer_down()">Ниже</button>
-</div>
 
 
 <script src="./static/scripts/map.js"></script>
-
-
-
-
-
-
-
-
 
 
 
