@@ -258,7 +258,10 @@ function find_route ()
         let min_dist = 100000000;
         for (let i = 0; i < graph.length; i++)
             if (graph[i].calculated == false && graph[i].distance < min_dist)
+            {
                 min_node = i;
+                min_dist = graph[i].distance;
+            }
 
 //          обновление значений расстояния до узла
         for (let i = 0; i < graph[min_node].connect.length; i++)
